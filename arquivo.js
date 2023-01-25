@@ -29,8 +29,8 @@ const q1 = {
   alternativaB: "Tsutomu Shimomura",
   alternativaC: "Julian Assange",
   alternativaD: "Lary Page",
-  correta: "Julian Assange", // falta adicionar mini bio
-  bio: "lorem lorem",
+  correta: "Julian Assange",
+  bio: "Julian Assange is an Australian computer programmer, publisher and journalist. He is the founder and editor of WikiLeaks, a website that publishes classified documents and information from anonymous sources. He was arrested in 2019 by British police and faced extradition to the United States, where he is charged with espionage and hacking. His trial is still ongoing",
 };
 
 const q2 = {
@@ -41,8 +41,8 @@ const q2 = {
   alternativaB: "Aron Swartz",
   alternativaC: "Bill Gates",
   alternativaD: "Alan Turin",
-  correta: "Aron Swartz", // falta adicionar mini bio
-  bio: "lorem lorem2",
+  correta: "Aron Swartz",
+  bio: "Aron Swartz was a co-founder of the social news website Reddit and a prominent figure in the development of the World Wide Web, the creative commons movement, and the fight for internet freedom. Swartz co-wrote the first specification of the RSS web feed format and helped to develop the framework for the Creative Commons licenses. He was arrested in 2011 and faced the risk of 50 years in prison, plus a $1 million fine. Committed suicide in 2013 but left no note",
 };
 
 const q3 = {
@@ -52,7 +52,8 @@ const q3 = {
   alternativaB: "Ada Lovelace",
   alternativaC: "Grace Hooper",
   alternativaD: "Mark Zuckerberg",
-  correta: "Linus Torvalds", // falta adicionar mini bio
+  correta: "Linus Torvalds",
+  bio: "Linus Torvalds is a software engineer and programmer who is best known as the creator of the Linux operating system. Linux is a free and open-source operating system that is widely used in servers, supercomputers, and mobile devices. It is based on the Unix operating system and is known for its stability, security, and flexibility",
 };
 
 const q4 = {
@@ -63,7 +64,8 @@ const q4 = {
   alternativaB: "Gary Mckinnon",
   alternativaC: "Albert Gonzalez",
   alternativaD: "Kevin D. Mitnick",
-  correta: "Kevin D. Mitnick", // falta adicionar mini bio
+  correta: "Kevin D. Mitnick",
+  bio: "Kevin D. Mitnick is an American computer security consultant, author, and convicted hacker. He gained notoriety in the late 20th century as a highly-skilled hacker who used his abilities to gain unauthorized access to computer systems and networks, including those belonging to the government and major corporations",
 };
 
 const q5 = {
@@ -74,7 +76,8 @@ const q5 = {
   alternativaB: "Steve Jobs",
   alternativaC: "Arthur C Clark",
   alternativaD: "Kevin Poulsen",
-  correta: "Edward Snowden", // falta adicionar mini bio
+  correta: "Edward Snowden",
+  bio: "Edward Snowden is an computer professional, former CIA employee who copied and leaked classified information from the NSA in 2013 without authorization. His disclosures revealed a global surveillance program by the U.S. government, which included the bulk collection of telephone and internet metadata, as well as the PRISM and Upstream surveillance programs",
 };
 
 const q6 = {
@@ -85,7 +88,8 @@ const q6 = {
   alternativaB: "John McCarthy",
   alternativaC: "Jacob Appelbaum",
   alternativaD: "Ted Cood",
-  correta: "Jacob Appelbaum", // falta adicionar mini bio
+  correta: "Jacob Appelbaum",
+  bio: "Jacob Appelbaum is a computer security researcher and hacker. He was a core member of the Tor Project, a non-profit organization that develops and maintains the Tor anonymity network, which helps people protect their privacy and security on the internet. In 2016 several allegations of sexual misconduct were made against him, he denied all allegations, but he resigned from his position at the Tor Project and stepped away from the public sphere. He has since not been involved in any significant public activities",
 };
 
 const q7 = {
@@ -95,10 +99,11 @@ const q7 = {
   alternativaB: "James Gosling",
   alternativaC: "Martha Lane Fox",
   alternativaD: "Pablo Picasso",
-  correta: "Pablo Picasso", // falta adicionar mini bio
+  correta: "Pablo Picasso",
+  bio: "Pablo Picasso was a Spanish artist and painter widely considered one of the most influential artists of the 20th century. He is best known for co-founding the Cubist movement and for the wide variety of styles embodied in his work. He is also known for his contributions to Surrealism and his role in the development of collage",
 };
 
-const questoes = [q1, q2, q3, q4, q5, q6, q7];
+const questoes = [{}, q1, q2, q3, q4, q5, q6, q7];
 
 let numero = document.querySelector("#numero");
 let total = document.querySelector("#total");
@@ -137,6 +142,7 @@ function proximaQuestao(nQuestao) {
   c.setAttribute("value", nQuestao + "C");
   d.setAttribute("value", nQuestao + "D");
   progresso.value = parseInt(progresso.value) + 1;
+  console.log(nQuestao);
 }
 
 // VERIFICAR DUPLO CLICK NAS ALTERNATIVAS
@@ -173,7 +179,7 @@ function tirarPiscar() {
 function verificarSeAcertou(nQuestao, resposta) {
   let numeroDaQuestao = nQuestao.value;
   console.log("Questão " + numeroDaQuestao);
-
+  console.log(questoes[numeroDaQuestao]);
   let respostaEscolhida = resposta.textContent;
 
   let certa = questoes[numeroDaQuestao].correta;
@@ -201,7 +207,6 @@ function verificarSeAcertou(nQuestao, resposta) {
 
   let bio = document.querySelector("#bio");
   bio.innerText = questoes[numeroDaQuestao].bio;
-  console.log(questoes[numeroDaQuestao]);
 
   setTimeout(function () {
     proxima = numeroDaQuestao + 1;
