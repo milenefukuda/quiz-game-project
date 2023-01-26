@@ -7,11 +7,6 @@
   --vermelho: #f44336;
 }
 
-div.scrollmenu {
-  overflow: auto;
-  white-space: nowrap;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -181,4 +176,7 @@ h1 {
   border-radius: 8px;
   background: var(--branco);
   font-size: 2rem;
+}
+.hidden {
+  display: none;
 }

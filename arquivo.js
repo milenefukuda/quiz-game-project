@@ -1,4 +1,3 @@
-/* Aula 20 MaiaQuiz  */
 let titulo = document.querySelector("h1");
 let instrucoes = document.querySelector("#instrucoes");
 let aviso = document.querySelector("#aviso");
@@ -205,9 +204,6 @@ function verificarSeAcertou(nQuestao, resposta) {
   // bloquear a escolha de opcoes
   bloquearAlternativas();
 
-  let bio = document.querySelector("#bio");
-  bio.innerText = questoes[numeroDaQuestao].bio;
-
   setTimeout(function () {
     proxima = numeroDaQuestao + 1;
     bio.innerText = "";
@@ -218,28 +214,28 @@ function verificarSeAcertou(nQuestao, resposta) {
     } else {
       proximaQuestao(proxima);
     }
-  }, 3000);
+  }, 300);
   desbloquearAlternativas();
 }
 
 function fimDoJogo() {
   let s = "s";
   pontos == 0 ? (s = "") : (s = s);
-  instrucoes.textContent =
-    "Fim de Jogo! Você conseguiu " + pontos + " pontos de 60";
-
+  instrucoes.textContent = "Game Over! Score " + pontos + " out of 60";
+  let bio = document.querySelector("#bio");
+  bio.classList.remove("hidden");
   instrucoes.classList.add("placar");
 
   // OCULTAR O ARTICLE DA QUESTAO
   articleQuestoes.style.display = "none";
 
-  setTimeout(function () {
-    pontos = 0; // zerar placar
-    //location.reload();
-    instrucoes.classList.remove("placar");
-    // REINICIAR O JOGO
-    articleQuestoes.style.display = "block";
-    proximaQuestao(0);
-    instrucoes.textContent = "Read the quote and try to guess the author";
-  }, 8000);
+  // setTimeout(function () {
+  //   pontos = 0; // zerar placar
+  //   //location.reload();
+  //   instrucoes.classList.remove("placar");
+  //   // REINICIAR O JOGO
+  //   articleQuestoes.style.display = "block";
+  //   proximaQuestao(0);
+  //   instrucoes.textContent = "Read the quote and try to guess the author";
+  // }, 8000);
 }
