@@ -194,7 +194,7 @@ function verificarSeAcertou(nQuestao, resposta) {
   }
   setTimeout(() => {
     tirarPiscar();
-  }, 90000);
+  }, 900);
 
   // atualizar placar
   placar = pontos;
@@ -213,7 +213,7 @@ function verificarSeAcertou(nQuestao, resposta) {
     } else {
       proximaQuestao(proxima);
     }
-  }, 30000);
+  }, 300);
   desbloquearAlternativas();
 }
 
