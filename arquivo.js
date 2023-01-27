@@ -93,13 +93,12 @@ const q6 = {
 
 const q7 = {
   quoteNumb: 7,
-  pergunta: "Computers are useless. They can only give you answers",
+  pergunta: "BÔNUS: A vida não é um morango",
   alternativaA: "Richard Stallman",
   alternativaB: "James Gosling",
   alternativaC: "Martha Lane Fox",
-  alternativaD: "Pablo Picasso",
-  correta: "Pablo Picasso",
-  bio: "Pablo Picasso was a Spanish artist and painter widely considered one of the most influential artists of the 20th century. He is best known for co-founding the Cubist movement and for the wide variety of styles embodied in his work. He is also known for his contributions to Surrealism and his role in the development of collage",
+  alternativaD: "Alexandre Lima",
+  correta: "Alexandre Lima",
 };
 
 const questoes = [{}, q1, q2, q3, q4, q5, q6, q7];
@@ -195,7 +194,7 @@ function verificarSeAcertou(nQuestao, resposta) {
   }
   setTimeout(() => {
     tirarPiscar();
-  }, 200);
+  }, 90000);
 
   // atualizar placar
   placar = pontos;
@@ -214,7 +213,7 @@ function verificarSeAcertou(nQuestao, resposta) {
     } else {
       proximaQuestao(proxima);
     }
-  }, 300);
+  }, 30000);
   desbloquearAlternativas();
 }
 

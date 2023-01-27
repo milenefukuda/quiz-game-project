@@ -179,4 +179,6 @@ h1 {
 }
 .hidden {
   display: none;
+  justify-content: center;
+  box-sizing: content-box;
 }
