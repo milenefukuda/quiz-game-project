@@ -194,7 +194,7 @@ function verificarSeAcertou(nQuestao, resposta) {
   }
   setTimeout(() => {
     tirarPiscar();
-  }, 900);
+  }, 200);
 
   // atualizar placar
   placar = pontos;
