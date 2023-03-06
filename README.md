@@ -7,4 +7,4 @@ Welcome file
 ## Links
 
 - Para a apresentação: [clique aqui](https://prezi.com/view/BXLM1vFnyflwVvDuKWxk/)
-- Para a demo: [clique aqui](https://milenefukuda.github.io/quiz-game/)
+- Para a demo: [clique aqui](https://milenefukuda.github.io/quiz-game-project/)
